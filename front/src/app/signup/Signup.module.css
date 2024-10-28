@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.main {
+  background-image: url('https://bro.call.tn/build/assets/auth-bg-8529ec0e.svg');
+  padding: 20px;
+  background-color: rgb(246, 248, 250);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.submitButton {
+  width: 100%;
+  font-weight: bold;
+}
+
+.socialButtons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.signInPrompt {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.signInPrompt .linkCST {
+  color: blue;
+}

@@ -1,0 +1,171 @@
+.heroSection {
+    background-color: #37517e;
+    width: 100%;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    min-height: 70vh;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem; /* Adjusted for mobile responsiveness */
+    color: white !important;
+    font-weight: bolder !important;
+    text-align: center;
+  }
+  
+  .allonsYbtn {
+    background-color: #47b2e4;
+    font-weight: bolder;
+    border-radius: 50px;
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+  }
+  
+  .heroParagraph {
+    color: #afb9cb;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  .partnersRow {
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+  .aboutSection{
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    
+  }
+
+  .whiteSec{
+    background-color: white !important;
+  }
+
+  .aboutTitle{
+    font-size: 1.8rem !important;
+    text-align: center;
+    color: #37517e !important;
+    font-weight: bolder !important;
+    width: 200px !important;
+    border-bottom: 2px solid #80808047;
+    position: relative;
+  }
+  .aboutTitle::after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    background-color: #47b2e4;
+    top: 100%;
+    right: 50%;
+    transform : translateX(50%)
+  }
+
+  .secondAboutTitle{
+    color: #47b2e4 !important;
+  }
+
+  .paragCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .firstParag{
+    font-size: 1rem;
+    color: rgba(128, 128, 128, 0.733);
+  }
+  .secondParag {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+
+  .cradCST {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; 
+    transition: ease 0.5s;
+  }
+  
+  .cardTitle {
+    color: #37517e !important;
+    margin-bottom: 16px;
+  }
+  
+  .cradCST:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: ease 0.5s;
+  }
+  
+  .cradCST .ant-card-body {
+    flex-grow: 1; /* Allow the card content to grow to fill the space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cardImage {
+    width: 100%;
+    height: 150px !important;
+    object-fit: cover;
+    margin-bottom: 16px; 
+    transition: ease 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cardImage:hover {
+    width: 110% !important;
+    margin-left: -5% !important;
+    transition: ease 0.5s;
+  }
+  .ant-col {
+    display: flex;
+  }
+  
+  .ant-card {
+    flex-grow: 1;
+  }
+
+  @media (max-width: 1200px) {
+    .cradCST {
+      flex: 0 1 calc(50% - 1rem); /* Adjust for 2 cards per row on smaller screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cradCST {
+      flex: 0 1 100%; /* Full width for mobile view */
+      max-width: 400px;
+    }
+  }
+  @media (min-width: 768px) {
+    .heroTitle {
+      font-size: 3rem;
+      text-align: left;
+    }
+  
+    .heroParagraph {
+      text-align: left;
+      font-size: 1.4rem;
+    }
+  
+    .allonsYbtn {
+      margin-top: 50px;
+    }
+  }
+  
