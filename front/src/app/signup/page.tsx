@@ -1,16 +1,34 @@
-// Page.tsx
 "use client";
 import React from 'react';
 import { Button, Form, Input, Typography, Divider, Row, Col } from 'antd';
 import styles from './Signup.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import RegisterServices from '../API/RegisterServices';
+import ApiUrls from '../API/ApiURLs/ApiURLs';
+import { RegisterEntity } from '../entities/RegisterEntity';
 
 const { Title } = Typography;
 
 const Page: React.FC = () => {
-    const onFinish = (values: any) => {
-        console.log('Succès :', values);
+    // Triggered on form submission
+    const onFinish = async (values: RegisterEntity): Promise<void> => {
+        console.log('Form submitted with values:', values);
+        try{
+           const response = await RegisterServices.Register(ApiUrls.USER, values)
+           //const response = await RegisterServices.SayhelloPost("http://localhost:8000/api/hello");
+           console.log(response)
+           console.log("adding with success")
+           //console.log(response)
+        } catch(error){
+            console.log(error)
+        }
+    };
+
+    // Capture form value changes for debugging
+    const onValuesChange = (changedValues: any, allValues: any) => {
+        console.log('Field changed:', changedValues);
+        console.log('Current form values:', allValues);
     };
 
     return (
@@ -25,6 +43,7 @@ const Page: React.FC = () => {
                         name="signup" 
                         layout="vertical" 
                         onFinish={onFinish}
+                        onValuesChange={onValuesChange}
                     >
                         <Row gutter={[16, 16]}>
                             <Col xs={24} sm={12}>
@@ -52,7 +71,10 @@ const Page: React.FC = () => {
                                 <Form.Item
                                     name="age"
                                     label="Age"
-                                    rules={[{ required: true, message: 'Veuillez saisir votre age!' }]}
+                                    rules={[
+                                        { required: true, message: 'Veuillez saisir votre age!' },
+                                        { pattern: /^[0-9]+$/, message: 'Veuillez entrer un âge valide' },
+                                    ]}
                                 >
                                     <Input type="text" placeholder="Entrez votre age" />
                                 </Form.Item>
@@ -67,11 +89,23 @@ const Page: React.FC = () => {
                                 </Form.Item>
                             </Col>
                         </Row>
-
+                        <Form.Item
+                            name="tel"
+                            label="Numero de telephone"
+                            rules={[
+                                { required: true, message: 'Veuillez saisir votre numero de telephone!' },
+                                { pattern: /^\d{10}$/, message: 'Entrez un numéro valide à 10 chiffres' },
+                            ]}
+                        >
+                            <Input type="text" placeholder="Entrez votre numero de telephone!" />
+                        </Form.Item>
                         <Form.Item
                             name="email"
                             label="Email"
-                            rules={[{ required: true, message: 'Veuillez saisir votre email!' }]}
+                            rules={[
+                                { required: true, message: 'Veuillez saisir votre email!' },
+                                { type: 'email', message: 'Entrez un email valide' },
+                            ]}
                         >
                             <Input type="email" placeholder="Entrez votre email" />
                         </Form.Item>

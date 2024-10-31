@@ -71,7 +71,6 @@ const MainCST = ({ children }) => {
         placement="right"
         onClose={onClose}
         open={visible}
-        bodyStyle={{ padding: 0 }}
         closeIcon={<CloseOutlined style={{ fontSize: '18px' }} />}
         width={280}
       >
