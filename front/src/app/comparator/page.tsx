@@ -2,6 +2,7 @@
 import React, { FC, useState } from 'react';
 import { Card, Row, Col, Input, Select, Button } from 'antd';
 import styles from './Comparator.module.css';
+import RegisterForm from '../components/register/RegisterForm';
 
 const { Option } = Select;
 
@@ -71,6 +72,7 @@ const Page: FC = () => {
               />
             </Col>
             <Col span={24}>
+              <RegisterForm>
               <Button
                 type="primary"
                 htmlType="submit"
@@ -79,6 +81,8 @@ const Page: FC = () => {
               >
                 Comparer les offres
               </Button>
+                
+              </RegisterForm>
             </Col>
           </Row>
         </form>

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styles from './home.module.css';
 import CardsContainer from '../components/cardsContainer/CardsContainer';
 
+
 const { Title, Paragraph } = Typography;
 
 const guidesData = [
@@ -51,6 +52,7 @@ const actualitiesData = [
 const Page = () => {
   return (
     <>
+     {/* Hero Section */}
       <div className={styles.heroSection}>
         <Row className={"containerCST"} justify="center" align="middle" style={{ height: '100%', textAlign: 'start' }}>
           <Col xs={24} md={12} className={styles.textColumn}>
